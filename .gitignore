@@ -1,0 +1,13 @@
+# .gitignore
+
+# Ignore Python/Django-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Node.js/React-related files
+node_modules/
+build/
+dist/
+.DS_Store
