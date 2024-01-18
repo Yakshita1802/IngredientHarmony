@@ -1,0 +1,31 @@
+# .github/workflows/ci.yml
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main  # Adjust to your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: |
+          npm install
+        working-directory: ingredient-harmony-frontend  # Adjust to your frontend directory
+
+      - name: Run Tests
+        run: |
+          npm test
+        working-directory: ingredient-harmony-frontend  # Adjust to your frontend directory
